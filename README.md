@@ -1,4 +1,3 @@
-about-html
-==========
+# about html
 
 Small html examples
