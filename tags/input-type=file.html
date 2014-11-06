@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>&lt;input type="file"&gt;</title>
+  <script type="text/javascript">
+
+    function display_chosen_files(evt) {
+
+      var out = document.getElementById('out');
+
+      var files= evt.target.files;
+
+      if (files) {
+
+        for (var i=0, f; f=files[i]; i++) {
+           out.innerHTML += i + ': <b>' + f.name + '</b> (size: ' + f.size + ', Last Modified: ' + f.lastModifiedDate + ')<br>';
+        }
+
+      }
+      
+    }
+
+    function main() {
+
+      document.getElementById('id_file_input').addEventListener('change', display_chosen_files, false);
+      
+    }
+    
+  </script>
+</head>
+<body onload="main()">
+
+  Choose files: <input type="file" id="id_file_input" multiple>
+
+  <p>Chosen files:
+  <div id="out"></div>
+
+</body>
+</html>
