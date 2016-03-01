@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>&lt;input type="range"&gt;</title>
+
+  <script type="text/javascript">
+
+    var td_on_change;
+    var td_on_input;
+
+    function main() {
+      td_on_change = document.getElementById('td_on_change');
+      td_on_input  = document.getElementById('td_on_input' );
+
+
+    }
+
+
+    function on_change(val) {
+      td_on_change.innerHTML = val;
+    }
+
+    function on_input(val) {
+      td_on_input.innerHTML = val;
+    }
+
+  </script>
+</head>
+
+<body onload='main()'>
+
+<table>
+
+  <tr>
+    <td>onchange (Value updated when mouse is released)</td>
+    <td><input type="range" min="20" max="50" step="5" value="25" autocomplete="off" onchange="on_change(this.value);"></td>
+    <td id='td_on_change'>25</td>
+  </tr>
+
+  <tr>
+    <td>oninput (Value updated as mouse drags slider)</td>
+    <td><input type="range" min="20" max="50" step="5" value="35" autocomplete="off" oninput="on_input(this.value);"></td>
+    <td id='td_on_input'>35</td>
+  </tr>
+
+</body>
+</html>
