@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>TODO</title>
+  <style>
+
+  * { font-family: Garamond; font-size: 20px}
+
+td:nth-child(3),
+td:nth-child(5),
+td:nth-child(7) {border-left: 1px solid black}
+
+td {padding: 4px }
+
+table {border-collapse: collapse}
+
+  </style>
+
+  <script>
+
+function main() {
+
+    let esc_chars = [
+       'aacute',
+       'Aacute',
+       'acirc',
+       'Acirc',
+       'acute',
+       'aelig',
+       'AElig',
+       'Agrave',
+       'agrave',
+       'amp',
+       'aring',
+       'Aring',
+       'atilde',
+       'Atilde',
+       'auml',
+       'Auml',
+       'brvbar',
+       'Ccedil',
+       'ccedil',
+       'cedil',
+       'cent',
+       'copy',
+       'curren',
+       'deg',
+       'divide',
+       'eacute',
+       'Eacute',
+       'ecirc',
+       'Ecirc',
+       'egrave',
+       'Egrave',
+       'eth',
+       'ETH',
+       'Euml',
+       'euml',
+       'euro',
+       'frac12',
+       'frac14',
+       'frac34',
+       'gt',
+       'Iacute',
+       'iacute',
+       'Icirc',
+       'icirc',
+       'iexcl',
+       'igrave',
+       'Igrave',
+       'iquest',
+       'iuml',
+       'Iuml',
+       'lt',
+       'macr',
+       'micro',
+       'middot',
+       'nbsp',
+       'nbsp',
+       'not',
+       'Ntilde',
+       'ntilde',
+       'oacute',
+       'Oacute',
+       'Ocirc',
+       'ocirc',
+       'ograve',
+       'Ograve',
+       'ordf',
+       'ordm',
+       'Oslash',
+       'oslash',
+       'otilde',
+       'Otilde',
+       'ouml',
+       'Ouml',
+       'para',
+       'plusmn',
+       'pound',
+       'quot',
+       'raquo',
+       'reg',
+       'sect',
+       'shy',
+       'sup1',
+       'sup2',
+       'sup3',
+       'szlig',
+       'thorn',
+       'THORN',
+       'times',
+       'Uacute',
+       'uacute',
+       'Ucirc',
+       'ucirc',
+       'Ugrave',
+       'ugrave',
+       'uml',
+       'uuml',
+       'Uuml',
+       'Yacute',
+       'yacute',
+       'yen',];
+
+  var body =  document.getElementsByTagName('body')[0];
+  for (let esc_char of esc_chars) {
+    body.innerHTML += '&amp' + esc_char + '; = &' + esc_char + ';<br>';
+  }
+
+}
+
+  </script>
+</head>
+<body onload='main()' >
+
+<table>
+  <tr><td>&amp;#xe4;     </td><td> &#xe4;    </td></tr>
+</table>
+
+
+</body>
+</html>
