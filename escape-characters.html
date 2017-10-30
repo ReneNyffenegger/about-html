@@ -2,18 +2,20 @@
 <html>
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-  <title>TODO</title>
+  <title>HTML Escape characters</title>
   <style>
 
   * { font-family: Garamond; font-size: 20px}
 
-td:nth-child(3),
-td:nth-child(5),
-td:nth-child(7) {border-left: 1px solid black}
+  td:nth-child(3),
+  td:nth-child(5),
+  td:nth-child(7),
+  td:nth-child(9)
+    {border-left: 1px solid black}
 
-td {padding: 4px }
+  td {padding: 4px }
 
-table {border-collapse: collapse}
+  table {border-collapse: collapse}
 
   </style>
 
@@ -21,7 +23,7 @@ table {border-collapse: collapse}
 
 function main() {
 
-    let esc_chars = [
+    let esc_chars = [/* { */
        'aacute',
        'Aacute',
        'acirc',
@@ -121,12 +123,38 @@ function main() {
        'Uuml',
        'Yacute',
        'yacute',
-       'yen',];
+       'yen',]; /* } */
+
+
+  if (esc_chars.length != 100) {
+    alert ('Wrong assumption!');
+  }
 
   var body =  document.getElementsByTagName('body')[0];
-  for (let esc_char of esc_chars) {
-    body.innerHTML += '&amp' + esc_char + '; = &' + esc_char + ';<br>';
+
+  let table = document.getElementById('fill-me');
+
+  for (let row = 0; row < 20; row++) {
+
+    let tr = document.createElement('tr');
+
+    for (let col = 0; col <  5; col++) {
+
+      let td_1 = document.createElement('td');
+      let td_2 = document.createElement('td');
+
+      td_1.innerHTML = '&amp' + esc_chars[20*col + row] + ';';
+      td_2.innerHTML = '&'    + esc_chars[20*col + row] + ';';
+
+      tr.appendChild(td_1);
+      tr.appendChild(td_2);
+       
+
+    }
+
+    table.appendChild(tr)
   }
+
 
 }
 
@@ -134,10 +162,19 @@ function main() {
 </head>
 <body onload='main()' >
 
+  <h1>HTML Escape Characters</h1>
+
+
+<table id='fill-me'>
+</table>
+
+  <h2>Hexadecimal</h2>
+
+  It's also possible to write characters with a hexadecimal notation:
+
 <table>
   <tr><td>&amp;#xe4;     </td><td> &#xe4;    </td></tr>
 </table>
-
 
 </body>
 </html>
