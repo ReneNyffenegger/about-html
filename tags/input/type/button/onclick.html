@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>button: onclick</title>
+
+  <script type="text/javascript">
+
+    function add_numbers() {
+
+      console.log('foo');
+
+   //
+   // The plus in fromt of the document converts the returned value
+   // which is a String to a Number. This is necessary because
+   // the plus (+) operator concatenates strings.
+   //
+      var val_1 = +document.getElementById('val_1').value;
+      var val_2 = +document.getElementById('val_2').value;
+
+      document.getElementById('result').innerHTML = val_1 + val_2;
+
+
+    }
+
+  </script>
+
+</head>
+<body>
+
+  <table>
+
+    <tr><td>First summand:  </td><td><input type='text' id='val_1' value=18 />      </td></tr>
+    <tr><td>Second summand: </td><td><input type='text' id='val_2' value=22 />      </td></tr>
+    <tr><td>Result:         </td><td> <span id='result'></span>                     </td></tr>
+    <tr><td colspan='2'><input type='button' value='add' onclick='add_numbers();' /></td></tr>
+
+</body>
+</html>
