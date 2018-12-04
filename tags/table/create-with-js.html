@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Create a html table with java script</title>
+</head>
+
+<script type='text/javascript'>;
+
+  function addCell(tr, val) {
+    var td = document.createElement('td');
+
+    td.innerHTML = val;
+
+    tr.appendChild(td)
+  }
+
+
+  function addRow(tbl, val_1, val_2, val_3) {
+    var tr = document.createElement('tr');
+
+    addCell(tr, val_1);
+    addCell(tr, val_2);
+    addCell(tr, val_3);
+
+    tbl.appendChild(tr)
+  }
+
+  function main() {
+    tbl = document.getElementById('tbl');
+
+    addRow(tbl, 'foo', 'bar', 'baz');
+    addRow(tbl, 'one', 'two', 'three');
+  }
+
+</script>
+
+<body onload='main()'>
+
+  The content of the following table was<br>
+  dynamically created with JavaScript:
+  <p>
+
+   <table id='tbl' border=1></table>
+
+</body>
+</html>
