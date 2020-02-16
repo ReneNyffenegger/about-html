@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>TODO</title>
+
+  <script type="text/javascript">
+
+    function item_chosen(ev) {
+       document.getElementById('value'                   ).innerHTML = this.value;
+       document.getElementById('selectedIndex'           ).innerHTML = this.selectedIndex;
+       document.getElementById('this_selectedIndex'      ).innerHTML = this[this.selectedIndex];
+       document.getElementById('this_selectedIndex_inner').innerHTML = this[this.selectedIndex].innerHTML;
+    }
+
+    function main() {
+       var selection = document.getElementById('selection');
+       selection.addEventListener('change', item_chosen, false);
+    }
+
+  </script>
+
+</head>
+<body onload='main()'>
+
+   Choose wisely:
+   <select id='selection'>
+      <option value='val_0'>Zero </option>
+      <option value='val_1'>One  </option>
+      <option value='val_2'>Two  </option>
+      <option value='val_3'>Three</option>
+      <option value='val_4'>Four </option>
+      <option value='val_5'>Fvie </option>
+   </select>
+
+  </p>
+  Some values that are found via <code>this</code> in the event handler:
+   <table>
+     <tr><td><code>this.value                        </code></td><td id='value'                   ></td></tr>
+     <tr><td><code>this.selectedIndex                </code></td><td id='selectedIndex'           ></td></tr>
+     <tr><td><code>this[this.selectedIndex]          </code></td><td id='this_selectedIndex'      ></td></tr>
+     <tr><td><code>this[this.selectedIndex].innerHTML</code></td><td id='this_selectedIndex_inner'></td></tr>
+   </table>
+
+</body>
+</html>
