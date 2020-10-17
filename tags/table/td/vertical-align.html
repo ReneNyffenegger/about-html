@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>vertical-algin in &lt;td&gt; elements</title>
+
+  <style>
+     table {
+        width:250px;
+        float: left;
+        border-collapse: collapse;
+        margin-right: 20px;
+    }
+    td {
+        border: #124 solid 1px;
+    }
+
+    table#text-at-top td {
+       vertical-align: top;
+    }
+    
+  </style>
+
+</head>
+<body>
+
+   <table>
+      <tr><td>first line:</td><td>one two three four five six seven eight nine ten</td><td>foo bar baz</td></tr>
+      <tr><td>second line:</td><td>bla etc.</td><td>eins zwei drei vier fünf sechs sieben acht neun zehn</td></tr>
+   </table>
+
+   <table id='text-at-top'>
+      <tr><td>first line:</td><td>one two three four five six seven eight nine ten</td><td>foo bar baz</td></tr>
+      <tr><td>second line:</td><td>bla etc.</td><td>eins zwei drei vier fünf sechs sieben acht neun zehn</td></tr>
+   </table>
+</body>
+</html>
