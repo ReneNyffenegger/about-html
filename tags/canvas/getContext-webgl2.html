@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+
+    <script type="text/javascript">
+
+       function main() {
+           let cnv = document.getElementById('cnv');
+           let gl  = cnv.getContext('webgl2');
+
+        //
+        // Type (interface) of gl is WebGL2RenderingContext
+           console.log(gl.constructor);
+       }
+
+    </script>
+
+</head>
+
+<body onload="main()">
+
+  <canvas id='cnv'>
+    Canvas is not supported.
+  </canvas>
+
+</body>
+</html>
