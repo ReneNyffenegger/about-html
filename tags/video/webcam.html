@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>Render Webcam</title>
+
+<style>
+    body {
+      height: 100vh;
+    }
+
+    button#stop {
+      border          : 2px dotted #f73;
+    }
+
+    button:hover  { background-color: #edc; }
+    button:active { background-color: #dcb; }
+
+  </style>
+
+</head>
+
+<body onload='startWebCam()'>
+
+
+<script src='webcam.js'></script>
+<video id='video'></video>
+<p>
+<button id="stop">Stop WebCam</button>
+
+</body>
+</html>
