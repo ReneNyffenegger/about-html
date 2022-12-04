@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Compare &lt;pre&gt; to &lt;div&gt;</title>
+</head>
+<body>
+
+<div>abc</div>
+<pre></pre>
+
+</body>
+</html>
+
+<script>
+
+let pre    = document.getElementsByTagName('pre')[0];
+let div    = document.getElementsByTagName('div')[0];
+let cssPre = window.getComputedStyle(pre);
+let divPre = window.getComputedStyle(div);
+
+console.log('x');
+for(s of cssPre) {
+   if (cssPre[s] != divPre[s]) {
+      console.log(`${s}: ${cssPre[s]} != ${divPre[s]}`);
+   }
+}
+
+</script>
